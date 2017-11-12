@@ -2,16 +2,14 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
-
-
-
 <configuration>
     <!-- 加载数据库配置文件  -->
     <properties resource="jdbc.properties"/>
 
     <!--  别名 -->
     <typeAliases >
-        <typeAlias type="com.xixi.Jiansu.pojo.Person" alias="Person"/>
+        <!--<typeAlias type="com.xixi.Jiansu.pojo.Person" alias="Person"/>-->
+        <package name="com.xixi.Jiansu.pojo"/>
     </typeAliases>
 
     <!-- 配置全局属性 -->
@@ -26,7 +24,7 @@
         <!--<setting name="mapUnderscoreToCamelCase" value="true" />-->
     <!--</settings>-->
 
-    <!--配置环境，因为当前没有web环境-->
+    <!--配置环境，因为当前没有web环境。当前环境为开发环境-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -41,5 +39,7 @@
 
     <mappers>
         <mapper resource="com/xixi/Jiansu/mapper/Person.xml"/>
+        <mapper resource="com/xixi/Jiansu/mapper/PersonRelation.xml"/>
+        <!--<package name="com.xixi.Jiansu.mapper"/>-->
     </mappers>
 </configuration>

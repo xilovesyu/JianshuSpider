@@ -7,6 +7,9 @@
         <result column="followed" property="followed" jdbcType="INTEGER" />
         <result column="liked" property="liked" jdbcType="INTEGER" />
         <result column="articleCount" property="articleCount" jdbcType="INTEGER" />
+        <result column="CharacterCount" property="CharacterCount" jdbcType="INTEGER" />
+        <result column="HowManyLikes" property="HowManyLikes" jdbcType="INTEGER" />
+        <result column="selfIntroduction" property="selfIntroduction" jdbcType="VARCHAR" />
     </resultMap>
 
     <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
@@ -15,9 +18,10 @@
         from person
         where NAME = #{name,jdbcType=VARCHAR}
     </select>
+
     <insert id="insertPerson"  parameterType="Person">
-        insert into Person(id,name,followed,liked,articleCount) values(
-          #{id},#{name},#{followed},#{liked},#{articleCount}
+        insert into Person(id,name,followed,liked,articleCount,CharacterCount,HowManyLikes,selfIntroduction) values(
+          #{id},#{name},#{followed},#{liked},#{articleCount},#{CharacterCount},#{HowManyLikes},#{selfIntroduction}
         )
     </insert>
 </mapper>

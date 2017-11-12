@@ -18,7 +18,7 @@ public class PersonService {
             session.insert("insertPerson",person);
             session.commit();
         }catch(Exception e){
-            System.out.println("insert error"+e.toString());
+            System.out.println("insert error!!! "+e.toString());
         }
         finally {
             session.rollback();
