@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xixi.Jiansu.mapper.PersonRelation" >
+    <resultMap id="BaseResultMap" type="PersonRelation" >
+
+        <result column="pid1" property="pid1" jdbcType="VARCHAR" />
+        <result column="pid2" property="pid2" jdbcType="VARCHAR" />
+
+    </resultMap>
+
+
+    <insert id="insertPersonRelation"  parameterType="PersonRelation">
+        insert into PersonRelation(pid1,pid2) values(
+          #{pid1},#{pid2}
+        )
+    </insert>
+</mapper>
